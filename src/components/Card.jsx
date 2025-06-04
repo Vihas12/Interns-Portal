@@ -1,11 +1,10 @@
-import { Link } from 'react-router-dom'
-import { FaLocationDot, FaRegMoneyBill1, FaCalendar } from 'react-icons/fa6'
+import { Link } from "react-router-dom";
+import { FaLocationDot, FaRegMoneyBill1, FaCalendar } from "react-icons/fa6";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Card = ({ data }) => {
   return (
     <div className="group w-full max-w-sm bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-2xl hover:border-blue-200 md:w-80">
-      
       {/* Card Content */}
       <div className="p-6">
         {/* Header */}
@@ -26,8 +25,12 @@ const Card = ({ data }) => {
               <FaLocationDot size={16} />
             </div>
             <div>
-              <span className="text-gray-500 text-xs font-medium uppercase tracking-wide">Location</span>
-              <p className="text-gray-800 text-sm font-semibold">{data.location}</p>
+              <span className="text-gray-500 text-xs font-medium uppercase tracking-wide">
+                Location
+              </span>
+              <p className="text-gray-800 text-sm font-semibold">
+                {data.location}
+              </p>
             </div>
           </div>
 
@@ -37,8 +40,12 @@ const Card = ({ data }) => {
               <FaRegMoneyBill1 size={16} />
             </div>
             <div>
-              <span className="text-gray-500 text-xs font-medium uppercase tracking-wide">Stipend</span>
-              <p className="text-gray-800 text-sm font-semibold">{data.stipend}</p>
+              <span className="text-gray-500 text-xs font-medium uppercase tracking-wide">
+                Stipend
+              </span>
+              <p className="text-gray-800 text-sm font-semibold">
+                {data.stipend}
+              </p>
             </div>
           </div>
 
@@ -48,8 +55,12 @@ const Card = ({ data }) => {
               <FaCalendar size={16} />
             </div>
             <div>
-              <span className="text-gray-500 text-xs font-medium uppercase tracking-wide">Duration</span>
-              <p className="text-gray-800 text-sm font-semibold">{data.duration}</p>
+              <span className="text-gray-500 text-xs font-medium uppercase tracking-wide">
+                Duration
+              </span>
+              <p className="text-gray-800 text-sm font-semibold">
+                {data.duration}
+              </p>
             </div>
           </div>
         </div>
@@ -58,15 +69,15 @@ const Card = ({ data }) => {
       {/* Footer/Action Area */}
       <div className="flex items-center px-6 py-4 bg-gray-50 group-hover:bg-blue-50 border-t rounded-b-2xl border-gray-100 transition-colors duration-200">
         <Link
-          to={`/internship-detail/${data._id}`}
+          to={`/internship/${data._id}`}
           className="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm font-semibold group-hover:text-lg transition-all duration-200"
         >
-          View Details 
-          <MdKeyboardArrowRight size={20}/>
+          View Details
+          <MdKeyboardArrowRight size={20} />
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
