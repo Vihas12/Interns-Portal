@@ -1,18 +1,33 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import Filter from "../components/Filter";
 import internshipDetails from "../assets/internshipDetail.js";
 
 const Internship = () => {
+  const [filter,setFilter] = useState({
+    search: "",
+    location: "",
+    duration: "",
+    stipend: "",
+  });
+
+  // Function to handle filter changes
+  useEffect(() => {
+    const handleFilterChange = (newFilter) => {
+      setFilter((prevFilter) => ({
+        ...prevFilter,
+        ...newFilter,
+      }));
+    };
+    console.log("Current Filters:", filter);
+  }, [filter]);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-black/10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
-        </div>
+      <div className="bg-gradient-to-r from-blue-600 to-blue-800 relative overflow-hidden">
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="text-center">
@@ -44,7 +59,7 @@ const Internship = () => {
       </div>
 
       {/* Filter Section */}
-      <Filter />
+      <Filter activeFilters={filter} setActiveFilters={setFilter}/>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -101,25 +116,6 @@ const Internship = () => {
         )}
       </div>
 
-      {/* Call to Action Section */}
-      <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Ready to Start Your Journey?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Join thousands of students who have found their perfect internship through our platform
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              Create Account
-            </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
-              Learn More
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
