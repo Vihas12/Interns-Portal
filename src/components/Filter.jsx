@@ -112,19 +112,7 @@ const Filter = ({ activeFilters, setActiveFilters }) => {
                     <option value="hybrid">Hybrid</option>
                   </select>
                   <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
-                    <svg
-                      className="w-4 h-4 text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
+                    <FaChevronDown className="w-4 h-4 text-gray-400" />
                   </div>
                 </div>
               </div>
@@ -154,19 +142,7 @@ const Filter = ({ activeFilters, setActiveFilters }) => {
                     <option value="12">12 Months</option>
                   </select>
                   <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
-                    <svg
-                      className="w-4 h-4 text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
+                    <FaChevronDown className="w-4 h-4 text-gray-400" />
                   </div>
                 </div>
               </div>
@@ -199,30 +175,11 @@ const Filter = ({ activeFilters, setActiveFilters }) => {
                     <option value="15000+">₹15,000+</option>
                   </select>
                   <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
-                    <svg
-                      className="w-4 h-4 text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
+                    <FaChevronDown className="w-4 h-4 text-gray-400" />
                   </div>
                 </div>
               </div>
 
-              {/* Search Button */}
-              <div className="flex items-end">
-                <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
-                  <FaSearch />
-                  Search Internships
-                </button>
-              </div>
             </div>
           </div>
 
