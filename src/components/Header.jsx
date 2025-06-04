@@ -77,7 +77,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation Menu */}
-        <div className={`transition-all duration-300 ease-in-out ${
+        <div className={`md:hidden transition-all duration-300 ease-in-out ${
           isMenuOpen ? 
              ( 'max-h-70 opacity-100 pb-4' )
             : ('max-h-0 opacity-0 overflow-hidden')
