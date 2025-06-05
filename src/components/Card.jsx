@@ -4,7 +4,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Card = ({ data }) => {
   return (
-    <div className="group w-full max-w-sm bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-2xl hover:border-blue-200 md:w-80">
+    <div className="group w-full max-w-lg bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-2xl hover:border-blue-200">
       {/* Card Content */}
       <div className="p-6">
         {/* Header */}
@@ -36,7 +36,7 @@ const Card = ({ data }) => {
 
           {/* Stipend */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-green-50 group-hover:bg-green-100 text-green-600 flex items-center justify-center rounded-full transition-colors duration-200">
+            <div className="w-10 h-10 bg-blue-50 group-hover:bg-blue-100 text-blue-600 flex items-center justify-center rounded-full transition-colors duration-200">
               <FaRegMoneyBill1 size={16} />
             </div>
             <div>
@@ -44,14 +44,14 @@ const Card = ({ data }) => {
                 Stipend
               </span>
               <p className="text-gray-800 text-sm font-semibold">
-                {data.stipend}
+                ₹{data.stipend}/month
               </p>
             </div>
           </div>
 
           {/* Duration */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-purple-50 group-hover:bg-purple-100 text-purple-600 flex items-center justify-center rounded-full transition-colors duration-200">
+            <div className="w-10 h-10 bg-blue-50 group-hover:bg-blue-100 text-blue-600 flex items-center justify-center rounded-full transition-colors duration-200">
               <FaCalendar size={16} />
             </div>
             <div>

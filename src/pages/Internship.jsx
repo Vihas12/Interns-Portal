@@ -21,7 +21,6 @@ const Internship = () => {
         ...newFilter,
       }));
     };
-    console.log("Current Filters:", filter);
   }, [filter]);
 
   return (
@@ -75,12 +74,9 @@ const Internship = () => {
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {internshipDetails.map((internship, index) => (
+          {internshipDetails.map((internship) => (
             <div 
               className="flex justify-center transform hover:scale-105 transition-all duration-300 hover:z-10"
-              style={{
-                animationDelay: `${index * 0.1}s`,
-              }}
             >
               <Card data={internship} />
             </div>
@@ -103,7 +99,7 @@ const Internship = () => {
           </div>
         )}
 
-        {/* Load More Section */}
+        {/* Load More Section
         {internshipDetails.length > 0 && (
           <div className="text-center mt-16">
             <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200">
@@ -113,7 +109,7 @@ const Internship = () => {
               Showing {internshipDetails.length} of {internshipDetails.length} internships
             </p>
           </div>
-        )}
+        )} */}
       </div>
 
     </div>

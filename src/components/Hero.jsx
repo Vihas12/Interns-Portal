@@ -1,5 +1,5 @@
 import { FaArrowDownLong } from "react-icons/fa6";
-
+import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <>
@@ -30,12 +30,12 @@ const Hero = () => {
 
           {/* Hero Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button className="bg-gradient-to-r from-blue-500 hover:from-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300">
+            <Link to={"/internships"} className="bg-gradient-to-r from-blue-500 hover:from-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300">
               Explore Internships
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300 backdrop-blur-sm">
+            </Link>
+            <Link to={"/about"} className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300 backdrop-blur-sm">
               About Us
-            </button>
+            </Link>
           </div>
 
           {/* Stats Section */}
