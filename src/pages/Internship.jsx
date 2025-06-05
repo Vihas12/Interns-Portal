@@ -95,7 +95,7 @@ const Internship = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-800 relative overflow-hidden">
+      <div className="bg-gradient-to-r from-blue-800 to-blue-950 relative overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">

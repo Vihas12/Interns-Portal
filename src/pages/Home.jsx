@@ -12,8 +12,8 @@ const Home = () => {
       <div className="max-w-7xl mx-auto lg:px-8 p-12 m-12 flex flex-col gap-8">
         {internshipDetails && internshipDetails.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {internshipDetails.slice(0, 6).map((internship) => (
-              <div className="flex justify-center">
+            {internshipDetails.slice(0, 6).map((internship, index) => (
+              <div key={index} className="flex justify-center">
                 <Card data={internship} />
               </div>
             ))}
