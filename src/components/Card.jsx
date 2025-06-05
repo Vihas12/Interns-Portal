@@ -59,7 +59,7 @@ const Card = ({ data }) => {
                 Duration
               </span>
               <p className="text-gray-800 text-sm font-semibold">
-                {data.duration}
+                {data.duration} months
               </p>
             </div>
           </div>

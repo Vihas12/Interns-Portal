@@ -6,6 +6,8 @@ import Filter from "../components/Filter";
 import internshipDetails from "../assets/internshipDetail.js";
 
 const Internship = () => {
+  const [filteredInternships, setFilteredInternships] = useState(internshipDetails);
+
   const [filter,setFilter] = useState({
     search: "",
     location: "",
@@ -13,14 +15,60 @@ const Internship = () => {
     stipend: "",
   });
 
+  const applyFilters = () => {
+  let filtered = internshipDetails;
+
+  // Search filter
+  // Working with case-insensitive search for title and company
+  if (filter.search) {
+    filtered = filtered.filter((internship) =>
+      internship.title.toLowerCase().includes(filter.search.toLowerCase()) ||
+      internship.company.toLowerCase().includes(filter.search.toLowerCase())
+    );
+  }
+
+  // Location filter
+  if (filter.location !== "All Locations" && filter.location !== "") {
+    if (filter.location === "remote") {
+      filtered = filtered.filter((internship) => internship.location.toLowerCase() === "remote");
+    } else if (filter.location === "hybrid") {
+      filtered = filtered.filter((internship) => internship.location.toLowerCase() === "hybrid");
+    } else if (filter.location === "onsite") {
+      filtered = filtered.filter((internship) =>
+        internship.location.toLowerCase() !== "remote" &&
+        internship.location.toLowerCase() !== "hybrid"
+      );
+    }
+  }
+
+  // Duration filter
+  if (filter.duration !== "") {
+    filtered = filtered.filter((internship) => internship.duration === parseInt(filter.duration));
+  }
+
+  // Stipend filter
+  if (filter.stipend !== "") {
+    if (filter.stipend === "unpaid") {
+      filtered = filtered.filter((internship) => internship.stipend === "Unpaid");
+    } else if (filter.stipend === "0-5000") {
+      filtered = filtered.filter((internship) => internship.stipend <= 5000);
+    } else if (filter.stipend === "5000-10000") {
+      filtered = filtered.filter((internship) => internship.stipend > 5000 && internship.stipend <= 10000);
+    } else if (filter.stipend === "10000-15000") {
+      filtered = filtered.filter((internship) => internship.stipend > 10000 && internship.stipend <= 15000);
+    } else if (filter.stipend === "15000+") {
+      filtered = filtered.filter((internship) => internship.stipend > 15000);
+    }
+  }
+
+  setFilteredInternships(filtered);
+};
+
+
   // Function to handle filter changes
   useEffect(() => {
-    const handleFilterChange = (newFilter) => {
-      setFilter((prevFilter) => ({
-        ...prevFilter,
-        ...newFilter,
-      }));
-    };
+    applyFilters();
+    console.log("Filters applied:", filter);
   }, [filter]);
 
   return (
@@ -62,7 +110,11 @@ const Internship = () => {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Section Header */}
+        
+
+        {/* Cards Grid */}
+        {filteredInternships.length > 0 ? (
+          <div>
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Latest Opportunities
@@ -71,45 +123,51 @@ const Internship = () => {
             Browse through carefully curated internship positions that match your skills and career goals
           </p>
         </div>
-
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {internshipDetails.map((internship) => (
-            <div 
-              className="flex justify-center transform hover:scale-105 transition-all duration-300 hover:z-10"
-            >
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          {filteredInternships.map((internship) => (
+            <div className="flex justify-center transform hover:scale-105 transition-all duration-300 hover:z-10">
               <Card data={internship} />
             </div>
           ))}
         </div>
+        </div>
+        ) : (
+          <div className="text-center py-20">
+            <div className="max-w-lg mx-auto">
+              {/* Animated Empty State */}
+              <div className="relative mb-8">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+                <div className="relative bg-white rounded-full p-8 shadow-xl">
+                  <svg
+                    className="mx-auto h-24 w-24 text-gray-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1}
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 00-2 2H8a2 2 0 00-2-2V6m8 0h2a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h2"
+                    />
+                  </svg>
+                </div>
+              </div>
 
-        {/* Empty State */}
-        {internshipDetails.length === 0 && (
-          <div className="text-center py-16">
-            <div className="bg-gray-100 rounded-full w-32 h-32 mx-auto mb-6 flex items-center justify-center">
-              <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                No Internships Available
+              </h3>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                We're working hard to bring you amazing internship
+                opportunities. Check back soon or subscribe to get notified when
+                new positions are posted.
+              </p>
+
             </div>
-            <h3 className="text-2xl font-semibold text-gray-900 mb-2">No internships found</h3>
-            <p className="text-gray-600 mb-6">Try adjusting your filters or search criteria</p>
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-              Clear Filters
-            </button>
           </div>
-        )}
+        ) }
+        
 
-        {/* Load More Section
-        {internshipDetails.length > 0 && (
-          <div className="text-center mt-16">
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-              Load More Opportunities
-            </button>
-            <p className="text-gray-500 mt-4">
-              Showing {internshipDetails.length} of {internshipDetails.length} internships
-            </p>
-          </div>
-        )} */}
       </div>
 
     </div>
