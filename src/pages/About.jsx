@@ -253,7 +253,7 @@ const AboutUs = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to={"/internships"} className="bg-white text-blue-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+            <Link to={"/internships"} className="bg-white text-blue-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 hover:scale-110 duration-300 transition-transform shadow-lg">
               Find Internships
             </Link>
             
