@@ -10,7 +10,7 @@ import internshipDetails from "../assets/internshipDetail.js";
 const Internshipdetail = () => {
   const { id: internshipId } = useParams();
   const internship = internshipDetails.find(
-    (internship) => internship._id === internshipId
+    (internshipItem) => internshipItem._id === internshipId
   );
 
   return (
