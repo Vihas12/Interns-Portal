@@ -52,7 +52,7 @@ const Internshipdetail = () => {
                       Stipend
                     </p>
                     <p className="text-gray-900 font-semibold">
-                      {internship.stipend}
+                      ₹{internship.stipend}/month
                     </p>
                   </div>
                 </div>
@@ -66,7 +66,7 @@ const Internshipdetail = () => {
                       Duration
                     </p>
                     <p className="text-gray-900 font-semibold">
-                      {internship.duration}
+                      {internship.duration} month
                     </p>
                   </div>
                 </div>

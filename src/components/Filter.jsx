@@ -31,7 +31,7 @@ const Filter = ({ activeFilters, setActiveFilters }) => {
       <div className="lg:hidden mb-4">
         <button
           onClick={() => setIsFilterOpen(!isFilterOpen)}
-          className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          className="flex ml-3 items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
         >
           <FaFilter className="text-sm" />
           Filters
