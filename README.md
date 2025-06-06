@@ -37,11 +37,13 @@ This is the frontend application for an Internship Portal, built using **React**
 ```bash
 git clone https://github.com/Vihas12/Interns-Portal.git
 cd Interns-Portal
+```
 
 ### 2. Insatll Dependencies
 
 ```bash
 npm insatll
+```
 
 ### 3. Start the Development Server
 
