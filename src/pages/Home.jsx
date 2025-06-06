@@ -17,7 +17,6 @@ const Home = () => {
                 <Card data={internship} />
               </div>
             ))}
-            
           </div>
         ) : (
           <div className="text-center py-20">
@@ -53,15 +52,16 @@ const Home = () => {
             </div>
           </div>
         )}
-        <div className="flex gap-4 justify-center">
-              <Link
-                to="/internships"
-                className="bg-gradient-to-r from-blue-500 to-blue-800  hover:from-blue-600 hover:to-blue-900 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                <FaSearch />
-                Explore All Internships
-              </Link>
-            </div>
+        <div className="flex justify-center px-4 sm:px-6 md:px-8">
+          <Link
+            to="/internships"
+            className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-800 hover:from-blue-600 hover:to-blue-900 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 text-center"
+          >
+            <FaSearch className="text-sm sm:text-base" />
+            Explore All Internships
+          </Link>
+        </div>
+
       </div>
     </div>
   );
