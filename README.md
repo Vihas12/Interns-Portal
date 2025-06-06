@@ -1,12 +1,51 @@
-# React + Vite
+## 🔗 Live Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+You can check out the live version of the Internship Portal here:  
+👉 [https://interns-portal.vercel.app/](https://interns-portal.vercel.app/)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 🧑‍💼 Internship Portal Frontend
 
-## Expanding the ESLint configuration
+This is the frontend application for an Internship Portal, built using **React** and **Vite**. The portal allows students to browse, search, and apply for internships.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🔧 Tech Stack
+
+- ⚛️ React.js
+- ⚡ Vite
+- 💅 Tailwind CSS
+- 🧭 React Router DOM
+
+---
+
+## ✨ Features
+
+- 🔍 Search and Filter internships by location, duration, stipend, etc.
+- 📄 Detailed Internship Listings with Apply Now options
+- 📋 Form to apply for internships
+- 🔄 Dynamic Routing for internship details
+- 💡 Responsive Design
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Vihas12/Interns-Portal.git
+cd Interns-Portal
+
+### 2. Insatll Dependencies
+
+```bash
+npm insatll
+
+### 3. Start the Development Server
+
+```bash
+npm run dev
+
+

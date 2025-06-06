@@ -89,7 +89,7 @@ const Internship = () => {
 
   useEffect(() => {
     applyFilters();
-    console.log("Filters applied:", filter);
+    // console.log("Filters applied:", filter);
   }, [filter]);
 
   return (

@@ -53,7 +53,7 @@ const Home = () => {
             </div>
           </div>
         )}
-        <div className="flex gap-4 justify-center">
+        <div className="flex gap-4 justify-between">
               <Link
                 to="/internships"
                 className="bg-gradient-to-r from-blue-500 to-blue-800  hover:from-blue-600 hover:to-blue-900 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
